@@ -1,5 +1,5 @@
 import assert from 'assert'
-import plugin from '../index.mjs'
+import plugin from '../index.js'
 
 
 describe('plugin', () => {
