@@ -94,3 +94,41 @@ mobal.configs.accessability
 ```
 npm run test
 ```
+
+## Local development
+
+* clone the repo
+```
+git clone git@github.com:Mobal-io/eslint-plugin-mobal.git
+cd eslint-plugin-mobal
+```
+* install dependencies
+```
+npm i
+```
+* create npm link
+```
+npm link
+```
+* go to repo you want to add the plugin
+```
+cd path/to/repo
+```
+* add link to the plugin
+```
+npm link eslint-plugin-mobal
+```
+* make your changes
+
+Note: after `npm i` or `npm ci` in the repo, you need to reinstall link, so run `npm link eslint-plugin-mobal` again.
+
+## Release
+
+* run tests, ensure everything works
+* add tag
+```
+git tag -a vX.X.X -m "version changes"
+```
+* push
+* create new release on github using the tag
+* update the plugin package link in your repo
