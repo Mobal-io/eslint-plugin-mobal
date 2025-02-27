@@ -1,0 +1,16 @@
+export default {
+    'vuejs-accessibility/no-onchange': ['off'],
+    'vuejs-accessibility/alt-text': ['error'],
+    'vuejs-accessibility/anchor-has-content': ['error'],
+    'vuejs-accessibility/aria-props': ['error'],
+    'vuejs-accessibility/aria-role': ['error'],
+    'vuejs-accessibility/aria-unsupported-elements': ['error'],
+    'vuejs-accessibility/iframe-has-title': ['error'],
+    'vuejs-accessibility/interactive-supports-focus': ['error'],
+    'vuejs-accessibility/mouse-events-have-key-events': ['error'],
+    'vuejs-accessibility/no-access-key': ['error'],
+    'vuejs-accessibility/no-distracting-elements': ['error'],
+    'vuejs-accessibility/no-redundant-roles': ['error'],
+    'vuejs-accessibility/role-has-required-aria-props': ['error'],
+    'vuejs-accessibility/tabindex-no-positive': ['error'],
+}
