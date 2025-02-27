@@ -129,6 +129,7 @@ Note: after `npm i` or `npm ci` in the repo, you need to reinstall link, so run 
 ```
 git tag -a vX.X.X -m "version changes"
 ```
+use angular version guide: major change.minor change.patch
 * push
 * create new release on github using the tag
 * update the plugin package link in your repo
