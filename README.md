@@ -131,5 +131,8 @@ git tag -a vX.X.X -m "version changes"
 ```
 use angular version guide: major change.minor change.patch
 * push
+```
+git push origin tag vX.X.X
+```
 * create new release on github using the tag
 * update the plugin package link in your repo
