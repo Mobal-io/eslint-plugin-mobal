@@ -103,6 +103,7 @@ export default {
             'minimumDescriptionLength': 10,
         },
     ],
+    '@typescript-eslint/no-unnecessary-condition': 'error',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/no-unused-vars': ['error', {
