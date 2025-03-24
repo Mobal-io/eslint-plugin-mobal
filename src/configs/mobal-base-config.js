@@ -1,3 +1,4 @@
+import globals from 'globals'
 import { defineConfigWithVueTs } from '@vue/eslint-config-typescript'
 import stylistic from '@stylistic/eslint-plugin'
 import newlineDestructuring from 'eslint-plugin-newline-destructuring'
@@ -14,6 +15,11 @@ const config = defineConfigWithVueTs({
         'import': importPlugin,
         'newline-destructuring': newlineDestructuring,
         '@stylistic': stylistic,
+    },
+    languageOptions: {
+        globals: {
+            ...globals.browser,
+        },
     },
     rules: {
         ...baseJsRules,
