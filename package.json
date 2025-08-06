@@ -11,7 +11,7 @@
     "author": "Mobal-io",
     "license": "ISC",
     "dependencies": {
-        "@stylistic/eslint-plugin": "^4.1.0",
+        "@stylistic/eslint-plugin": "^5.2.2",
         "@typescript-eslint/parser": "^8.38.0",
         "@vue/eslint-config-typescript": "^14.6.0",
         "eslint": "^9.32.0",
