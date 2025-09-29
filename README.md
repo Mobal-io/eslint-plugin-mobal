@@ -136,3 +136,17 @@ git push origin tag vX.X.X
 ```
 * create new release on github using the tag
 * update the plugin package link in your repo
+
+### Updated/simplified
+
+* run tests, ensure everything works
+* update npm version
+```
+npm version <version> --no-commit-hooks
+```
+* push
+```
+git push origin tag vX.X.X
+```
+* create new release on github using the tag
+* update the plugin package link in your repo
