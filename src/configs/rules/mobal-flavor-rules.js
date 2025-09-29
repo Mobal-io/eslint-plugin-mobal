@@ -47,7 +47,6 @@ export default {
         'error',
         {
             'allowAllPropertiesOnSameLine': false,
-            'allowMultiplePropertiesPerLine': false,
         },
     ],
     '@stylistic/brace-style': [
