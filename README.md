@@ -88,6 +88,10 @@ mobal.configs.storybook
 ```
 mobal.configs.accessability
 ```
+* vue i18n config
+``` 
+mobal.configs.vueI18n
+```
 
 ## Testing
 

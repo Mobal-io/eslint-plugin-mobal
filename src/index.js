@@ -8,6 +8,7 @@ import importsConfig from './configs/mobal-imports-config.js'
 import vueAccessabilityConfig from './configs/mobal-vue-accessability-config.js'
 import jestConfigs from './configs/mobal-jest-config.js'
 import storybookConfig from './configs/mobal-storybook-config.js'
+import vueI18nConfigs from './configs/mobal-vue-i18n-config.js'
 
 const packageJsonPath = path.resolve(__dirname, '../package.json')
 const pkg = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'))
@@ -44,6 +45,9 @@ Object.assign(plugin.configs, {
     ],
     storybook: [
         storybookConfig,
+    ],
+    vueI18n: [
+        ...vueI18nConfigs,
     ],
 })
 
