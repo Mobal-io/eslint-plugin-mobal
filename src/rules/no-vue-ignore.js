@@ -1,5 +1,3 @@
-import htmlComments from 'eslint-plugin-vue/lib/utils/html-comments.js'
-
 const restrictedDirectives = [
     '@vue-ignore',
     '@vue-skip',
@@ -19,25 +17,27 @@ export default {
         },
     },
     create(context) {
-        const checkContainsDirective = (comment) => {
-            const { value } = comment.value
-            restrictedDirectives.forEach((directive) => {
-                if (value.includes(directive)) {
-                    context.report({
-                        loc: {
-                            start: comment.value.loc.start,
-                            end: comment.value.loc.end,
-                        },
-                        message: `Line contains ${directive}, ignoring potential type errors`,
-                    })
+        return {
+            Program(node) {
+                if (!node.templateBody) {
+                    return
                 }
-            })
+
+                for (const comment of node.templateBody.comments) {
+                    if (comment.type !== 'HTMLComment') {
+                        continue
+                    }
+
+                    for (const directive of restrictedDirectives) {
+                        if (comment.value.includes(directive)) {
+                            context.report({
+                                loc: comment.loc,
+                                message: `Line contains ${directive}, ignoring potential type errors`,
+                            })
+                        }
+                    }
+                }
+            },
         }
-        return htmlComments.defineVisitor(
-            context,
-            context.options[1],
-            checkContainsDirective,
-            { includeDirectives: true },
-        )
     },
 }
