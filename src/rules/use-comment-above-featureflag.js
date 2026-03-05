@@ -1,5 +1,3 @@
-import utils from 'eslint-plugin-vue/lib/utils/index.js'
-
 // @ts-check
 /** @type {import('eslint').Rule.RuleModule} */
 export default {
@@ -13,7 +11,11 @@ export default {
         },
     },
     create(context) {
-        return utils.defineTemplateBodyVisitor(context, {
+        const { defineTemplateBodyVisitor } = context.sourceCode.parserServices
+        if (!defineTemplateBodyVisitor) {
+            return {}
+        }
+        return defineTemplateBodyVisitor({
             VElement(node) {
                 if (node.name === 'posthogfeatureflag') {
                     const lineAbove = context.sourceCode.getLines()[node.loc.start.line - 2]
