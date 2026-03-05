@@ -49,7 +49,13 @@ export default {
         Literal: matcher(context),
         JSXText: matcher(context),
         CallExpression(node) {
-            if (node.callee.name === 'it' && !node.arguments[0].value.startsWith('should')) {
+            const firstArg = node.arguments[0]
+            if (
+                node.callee.name === 'it'
+                && firstArg
+                && typeof firstArg.value === 'string'
+                && !firstArg.value.startsWith('should')
+            ) {
                 context.report({
                     node,
                     message: 'Test name must start with should',

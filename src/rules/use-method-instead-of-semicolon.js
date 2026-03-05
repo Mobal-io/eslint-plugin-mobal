@@ -1,6 +1,3 @@
-import utils from 'eslint-plugin-vue/lib/utils/index.js'
-import { parse } from 'vue-eslint-parser'
-
 export default {
     meta: {
         type: 'problem',
@@ -11,7 +8,11 @@ export default {
 
     create(context) {
         const sourceCode = context.getSourceCode()
-        return utils.defineTemplateBodyVisitor(context, {
+        const { defineTemplateBodyVisitor } = sourceCode.parserServices
+        if (!defineTemplateBodyVisitor) {
+            return {}
+        }
+        return defineTemplateBodyVisitor({
             'VAttribute': (node) => {
                 if (node.key.name.rawName?.startsWith('@')) {
                     const line = node.loc.start.line
@@ -25,10 +26,5 @@ export default {
                 }
             },
         })
-    },
-    parsers: {
-        'vue-eslint-parser': {
-            parse,
-        },
     },
 }

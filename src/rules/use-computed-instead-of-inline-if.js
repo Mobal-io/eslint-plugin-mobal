@@ -1,6 +1,3 @@
-import utils from 'eslint-plugin-vue/lib/utils/index.js'
-import { parse } from 'vue-eslint-parser'
-
 export default {
     meta: {
         type: 'problem',
@@ -27,8 +24,12 @@ export default {
 
     create(context) {
         const sourceCode = context.getSourceCode()
+        const { defineTemplateBodyVisitor } = sourceCode.parserServices
+        if (!defineTemplateBodyVisitor) {
+            return {}
+        }
 
-        return utils.defineTemplateBodyVisitor(context, {
+        return defineTemplateBodyVisitor({
             'VAttribute[directive=true]': (node) => {
                 const currentDirective = node.key.name.name
                 const isIfDirective = currentDirective === 'if' || currentDirective === 'else-if'
@@ -50,10 +51,5 @@ export default {
                 }
             },
         })
-    },
-    parsers: {
-        'vue-eslint-parser': {
-            parse,
-        },
     },
 }
