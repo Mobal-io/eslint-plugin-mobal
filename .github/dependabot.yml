@@ -2,8 +2,16 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+- package-ecosystem: "npm"
+  directory: "/"
+  schedule:
+    interval: "weekly"
+  open-pull-requests-limit: 15
+  groups:
+    patch-updates:
+      update-types:
+      - "patch"
+    minor-updates:
+      update-types:
+      - "minor"
 
