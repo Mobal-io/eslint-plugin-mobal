@@ -5,7 +5,7 @@ const config = {
         import: importPlugin,
     },
     files: [
-        'src/**/*stories.{j,t}s',
+        'src/**/*stories.{j,t,mj,mt}s',
     ],
     rules: {
         'import/no-extraneous-dependencies': 'off',
