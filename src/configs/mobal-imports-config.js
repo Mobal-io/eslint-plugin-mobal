@@ -13,6 +13,7 @@ const config = {
             '.mjs',
             '.ts',
             '.tsx',
+            '.mts',
         ],
         'import/core-modules': [],
         'import/ignore': [

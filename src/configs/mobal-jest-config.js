@@ -9,10 +9,10 @@ const configs = [
         },
         // update this to match your test files
         files: [
-            '**/__mocks__/*.{j,t}s',
-            'tests/**/*.spec.{j,t}s?(x)',
-            'tests/**/*.{j,t}s?(x)',
-            '**/__tests__/*.{j,t}s?(x)',
+            '**/__mocks__/*.{j,t,mj,mt}s',
+            'tests/**/*.spec.{j,t,mj,mt}s?(x)',
+            'tests/**/*.{j,t,mj,mt}s?(x)',
+            '**/__tests__/*.{j,t,mj,mt}s?(x)',
         ],
         languageOptions: {
             globals: {

@@ -8,6 +8,7 @@ export default {
             'jsx': 'never',
             'ts': 'never',
             'tsx': 'never',
+            'mts': 'never',
         },
     ],
     'import/no-unresolved': [
