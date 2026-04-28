@@ -1,8 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 
-import tseslint from 'typescript-eslint'
-
 import './dirname-polyfill.js'
 import rules from './rules/index.js'
 import baseConfigRaw from './configs/mobal-base-config.js'
@@ -45,10 +43,7 @@ const javascriptConfig = {
 
 Object.assign(plugin.configs, {
     base: [baseConfig],
-    javascript: [
-        ...tseslint.configs.recommended,
-        javascriptConfig,
-    ],
+    javascript: [javascriptConfig],
     imports: [importsConfig],
     accessability: [vueAccessabilityConfig],
     vue: [
