@@ -64,13 +64,17 @@ export default defineConfigWithVueTs(
 
 provided configs:
 
-* vue config
+* vue config (vue + js/ts rules + parser via `defineConfigWithVueTs`)
 ```
 mobal.configs.vue
 ```
-* basic js/ts config
+* basic js/ts config (vue-coupled, kept for backwards compat with `mobal.configs.vue`)
 ```
 mobal.configs.base
+```
+* vue-agnostic js/ts config (rules only — no parser/plugin; consumer wires tseslint)
+```
+mobal.configs.javascript
 ```
 * basic imports style
 ```
@@ -92,6 +96,32 @@ mobal.configs.accessability
 ``` 
 mobal.configs.vueI18n
 ```
+
+### TS-only / Node service usage
+
+For repos without Vue (Cloudflare Workers, plain Node services), wire tseslint
+yourself and add `mobal.configs.javascript` on top:
+
+```js
+// eslint.config.mjs
+import js from '@eslint/js'
+import mobal from 'eslint-plugin-mobal'
+import tseslint from 'typescript-eslint'
+
+export default tseslint.config(
+    { ignores: ['node_modules/', 'dist/'] },
+    js.configs.recommended,
+    ...tseslint.configs.recommended,
+    ...mobal.configs.javascript,
+    ...mobal.configs.imports,
+)
+```
+
+`mobal.configs.javascript` only ships rules and helper plugins (import,
+stylistic, etc.) — the consumer registers `@typescript-eslint`'s parser and
+plugin via `tseslint.config()` + `tseslint.configs.recommended`. This avoids
+double-plugin-registration errors when mobal's preset is composed with other
+TS configs.
 
 ## Testing
 

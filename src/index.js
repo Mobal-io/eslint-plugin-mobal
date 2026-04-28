@@ -4,6 +4,7 @@ import path from 'path'
 import './dirname-polyfill.js'
 import rules from './rules/index.js'
 import baseConfigRaw from './configs/mobal-base-config.js'
+import javascriptConfigRaw from './configs/mobal-javascript-config.js'
 import importsConfig from './configs/mobal-imports-config.js'
 import vueAccessabilityConfig from './configs/mobal-vue-accessability-config.js'
 import jestConfigs from './configs/mobal-jest-config.js'
@@ -32,8 +33,17 @@ const baseConfig = {
     },
 }
 
+const javascriptConfig = {
+    ...javascriptConfigRaw,
+    plugins: {
+        ...javascriptConfigRaw.plugins,
+        mobal: plugin,
+    },
+}
+
 Object.assign(plugin.configs, {
     base: [baseConfig],
+    javascript: [javascriptConfig],
     imports: [importsConfig],
     accessability: [vueAccessabilityConfig],
     vue: [
