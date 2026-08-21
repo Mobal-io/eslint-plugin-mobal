@@ -1,7 +1,9 @@
 # eslint-plugin-mobal
 
 A repo containing Mobal.io eslint ruleset.
-Requires Eslint version >  9.x and flat config.
+Requires Eslint 9.x and flat config. eslint 10 is not supported yet: several of
+the plugins bundled here (notably `eslint-plugin-import`) have no eslint 10
+release and call APIs it removed.
 
 Doesn't includes base configs.
 
