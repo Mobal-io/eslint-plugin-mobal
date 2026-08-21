@@ -7,7 +7,7 @@ function matcher(context) {
     return (node) => {
         if (
             typeof node.value !== 'string' // not a string literal -> don't care
-            || !context.getFilename().match(/\.spec\.js?$/) // not a test file -> don't care
+            || !context.filename.match(/\.spec\.js?$/) // not a test file -> don't care
         ) {
             return
         }
