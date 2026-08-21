@@ -1,11 +1,12 @@
 import jest from 'eslint-plugin-jest'
-import importPlugin from 'eslint-plugin-import'
+
+import { importCompat } from '../compat-plugins.js'
 
 const configs = [
     {
         plugins: {
             jest,
-            import: importPlugin,
+            import: importCompat,
         },
         // update this to match your test files
         files: [
