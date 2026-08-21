@@ -1,29 +1,9 @@
 # eslint-plugin-mobal
 
 A repo containing Mobal.io eslint ruleset.
-Requires Eslint 9.x or 10.x and flat config.
+Requires Eslint version >  9.x and flat config.
 
 Doesn't includes base configs.
-
-## eslint 10
-
-The rules and presets here run on both eslint 9 and eslint 10. eslint 10 removed
-a batch of long-deprecated APIs (`context.getSourceCode()`, `context.getFilename()`,
-`sourceCode.getTokenOrCommentBefore()`, ...) and some of the plugins we bundle
-have no eslint 10 release yet, so `src/eslint10-compat.js` puts those APIs back
-for them. Drop the wrapper for a plugin once upstream ships eslint 10 support.
-
-Two things are on the consumer side when moving a repo to eslint 10:
-
-* `eslint-plugin-vue` must be at least `10.8.0` — earlier versions have a peer
-  range that excludes eslint 10, so a pin or override below that fails to install.
-* If your `eslint.config.mjs` imports a plugin directly (e.g. `eslint-plugin-vue`),
-  declare it in your own `package.json` instead of relying on it being hoisted out
-  of this package.
-
-Note that eslint 10 also changed the core `radix` rule: under `['error', 'as-needed']`
-eslint 9 flags a redundant `parseInt(x, 10)` while eslint 10 flags a missing radix
-instead, so expect that rule to move when you upgrade.
 
 ## Install
 

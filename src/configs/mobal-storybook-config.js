@@ -1,8 +1,8 @@
-import { importCompat } from '../compat-plugins.js'
+import importPlugin from 'eslint-plugin-import'
 
 const config = {
     plugins: {
-        import: importCompat,
+        import: importPlugin,
     },
     files: [
         'src/**/*stories.{j,t,mj,mt}s',

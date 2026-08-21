@@ -1,9 +1,9 @@
-import { importCompat } from '../compat-plugins.js'
+import importPlugin from 'eslint-plugin-import'
 import rules from './rules/mobal-import-rules.js'
 
 const config = {
     plugins: {
-        import: importCompat,
+        import: importPlugin,
     },
     rules,
     settings: {
