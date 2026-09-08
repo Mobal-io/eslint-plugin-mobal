@@ -1,3 +1,4 @@
+import newlineDestructuring from './newline-destructuring.js'
 import noVueIgnore from './no-vue-ignore.js'
 import useCommentAboveFeatureFlag from './use-comment-above-featureflag.js'
 import useComputedInsteadOfInlineIf from './use-computed-instead-of-inline-if.js'
@@ -7,6 +8,7 @@ import useNoRootEvents from './use-no-root-events.js'
 import useNoTrackEvents from './use-no-track-events.js'
 
 const rules = {
+    'newline-destructuring': newlineDestructuring,
     'no-vue-ignore': noVueIgnore,
     'use-comment-above-featureflag': useCommentAboveFeatureFlag,
     'use-computed-instead-of-inline-if': useComputedInsteadOfInlineIf,

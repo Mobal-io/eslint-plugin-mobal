@@ -1,11 +1,30 @@
 # eslint-plugin-mobal
 
 A repo containing Mobal.io eslint ruleset.
-Requires Eslint 9.x and flat config. eslint 10 is not supported yet: several of
-the plugins bundled here (notably `eslint-plugin-import`) have no eslint 10
-release and call APIs it removed.
+Requires Eslint 10.x and flat config. `eslint` is a peer dependency, so the
+consuming repo owns the version.
 
 Doesn't includes base configs.
+
+## Upgrading to 2.0.0
+
+Three breaking changes, all mechanical:
+
+* **Requires eslint 10.** Bump `eslint` to `^10` in the same PR that takes
+  `2.0.0` — the two cannot be staged separately.
+* **Rename the resolver settings key**: `'import/resolver'` →
+  `'import-x/resolver'`. The import rules now come from
+  [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x),
+  which reads every setting from the `import-x/` prefix. Rule *names* are
+  unchanged — they are still `import/*` — so rule overrides and inline
+  `eslint-disable` comments need no edits.
+* **`newline-destructuring/newline` → `mobal/newline-destructuring`.** The
+  upstream plugin was unmaintained and broken on eslint 10, so the rule is now
+  vendored here. Options are unchanged.
+
+If you use `eslint-import-resolver-webpack`, check whether you still need it —
+its peer dependency wants `eslint-plugin-import`, and tsconfig `paths` usually
+covers the same aliases via `eslint-import-resolver-typescript`.
 
 ## Install
 
@@ -48,7 +67,10 @@ export default defineConfigWithVueTs(
             },
         },
         settings: {
-            'import/resolver': {
+            // note the `import-x/` prefix: the import rules are provided by
+            // eslint-plugin-import-x, which always reads its settings from
+            // that prefix even though the rules are named `import/*`
+            'import-x/resolver': {
                 // if you use webpack, add this line. otherwise no need.
                 // check out eslint-import-resolver-webpack
                 webpack: {
