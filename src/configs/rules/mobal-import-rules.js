@@ -122,7 +122,6 @@ export default {
             'maxDepth': '∞',
             'ignoreExternal': false,
             'allowUnsafeDynamicCyclicDependency': false,
-            'disableScc': false,
         },
     ],
     'import/no-useless-path-segments': [

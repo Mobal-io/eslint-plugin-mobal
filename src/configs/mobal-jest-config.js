@@ -1,5 +1,5 @@
 import jest from 'eslint-plugin-jest'
-import importPlugin from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import-x'
 
 const configs = [
     {

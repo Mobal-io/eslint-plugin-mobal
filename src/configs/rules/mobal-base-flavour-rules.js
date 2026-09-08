@@ -19,7 +19,7 @@ export default {
     'object-property-newline': 'off',
     'brace-style': 'off',
     'curly': ['error', 'all'],
-    'newline-destructuring/newline': [
+    'mobal/newline-destructuring': [
         'error',
         {
             'items': 1,
