@@ -1,0 +1,24 @@
+src/configs/mobal-jest-config.js
+  s_69d8fd4e5a418a::t_516e3899adf2fb 1
+  s_69d8fd4e5a418a::t_90e2401d3f160a 19
+package-lock.json
+  s_69d8fd4e5a418a::t_721c6dfc727408 3,9
+package.json
+  s_69d8fd4e5a418a::t_d49b0d456bba38 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ef44d6305246f0532985780ddef577eea2adb9d9",
+  "prompts": {},
+  "sessions": {
+    "s_69d8fd4e5a418a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3b037902-e74a-40ee-963a-8813109ca385",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Kasper Henriksson <kasper@mobal.io>"
+    }
+  }
+}
