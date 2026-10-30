@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-mobal",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Mobal eslint configs and rules",
     "scripts": {
         "test": "mocha",
@@ -17,7 +17,6 @@
         "@vue/eslint-config-typescript": "^14.9.0",
         "eslint-plugin-import-newlines": "^2.0.0",
         "eslint-plugin-import-x": "^4.17.1",
-        "eslint-plugin-jest": "^29.17.0",
         "eslint-plugin-vue": "^10.11.1",
         "eslint-plugin-vuejs-accessibility": "^2.6.2",
         "globals": "^17.13.0",

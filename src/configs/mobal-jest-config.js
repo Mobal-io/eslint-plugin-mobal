@@ -1,10 +1,9 @@
-import jest from 'eslint-plugin-jest'
+import globals from 'globals'
 import importPlugin from 'eslint-plugin-import-x'
 
 const configs = [
     {
         plugins: {
-            jest,
             import: importPlugin,
         },
         // update this to match your test files
@@ -17,7 +16,7 @@ const configs = [
         languageOptions: {
             globals: {
                 global: true,
-                ...jest.environments.globals.globals,
+                ...globals.jest,
             },
         },
         rules: {
