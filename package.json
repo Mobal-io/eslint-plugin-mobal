@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-mobal",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "Mobal eslint configs and rules",
     "scripts": {
         "test": "mocha",
